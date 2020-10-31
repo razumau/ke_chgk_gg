@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :tournaments, only: [:index, :show]
-  # get 'tournament/index'
+  resources :players, only: [:index, :show]
 
 end
