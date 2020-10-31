@@ -1,0 +1,17 @@
+<h1>кесты</h1>
+
+<table>
+  <tr>
+    <th>Город</th>
+    <th>Год</th>
+    <th></th>
+  </tr>
+
+  <% @tournaments.each do |tournament| %>
+    <tr>
+      <td><%= tournament.city %></td>
+      <td><%= tournament.year %></td>
+      <td><%= link_to 'Show', tournament_path(tournament) %></td>
+    </tr>
+  <% end %>
+</table>

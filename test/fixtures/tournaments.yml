@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyText
+  year: 1
+  start_date: 2020-10-31
+  end_date: 2020-10-31
+
+two:
+  city: MyText
+  year: 1
+  start_date: 2020-10-31
+  end_date: 2020-10-31
