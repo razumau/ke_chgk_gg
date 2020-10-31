@@ -1,0 +1,13 @@
+<h1>игроки</h1>
+
+<table>
+  <tr>
+    <th>Имя</th>
+  </tr>
+
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= link_to player.name, player_path(player) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -9,9 +9,8 @@
 
   <% @tournaments.each do |tournament| %>
     <tr>
-      <td><%= tournament.city %></td>
+      <td><%= link_to tournament.city, tournament_path(tournament) %></td>
       <td><%= tournament.year %></td>
-      <td><%= link_to 'Show', tournament_path(tournament) %></td>
     </tr>
   <% end %>
 </table>
