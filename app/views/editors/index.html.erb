@@ -1,0 +1,13 @@
+<h1>редакторы</h1>
+
+<table>
+  <tr>
+    <th>Имя</th>
+  </tr>
+
+  <% @editors.each do |editor| %>
+    <tr>
+      <td><%= link_to editor.name, editor_path(editor) %></td>
+    </tr>
+  <% end %>
+</table>

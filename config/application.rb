@@ -17,3 +17,5 @@ module KeChgkGg
     # the framework and any gems in your application.
   end
 end
+
+require File.join(Rails.root, 'lib/tournament/tournament_year.rb')

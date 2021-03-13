@@ -1,1 +1,9 @@
-<%= link_to @team.base_name, @team.rating_link %>
+<h1><%=@team.base_name %> (<%= @team.city %>)</h1>
+<%= link_to "Рейтинг", @team.rating_link %>
+
+<% @team.tournamentteams.each do |team| %>
+  <h3><%= team.name %> (<%= team.tournament.year%>)</h3>
+  <% team.players.each do |player| %>
+    <p><%= link_to player.name, player_path(player) %> </p>
+  <% end %>
+<% end %>
