@@ -1,0 +1,13 @@
+<%= @editor.name %>
+<table>
+  <tr>
+    <th>Год</th>
+    <th>Игра</th>
+  </tr>
+<% @editor.editor_details.each do |editor_detail| %>
+  <tr>
+    <td><%= link_to editor_detail.tournament.year, tournament_path(editor_detail.tournament) %></td>
+    <td><%= editor_detail.game %></td>
+  </tr>
+<% end %>
+</table>

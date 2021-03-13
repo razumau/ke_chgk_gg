@@ -1,0 +1,13 @@
+<h1>команды</h1>
+
+<table>
+  <tr>
+    <th>команда</th>
+  </tr>
+
+  <% @teams.each do |team| %>
+    <tr>
+      <td><%= link_to team.name, tournamentteam_path(team) %></td>
+    </tr>
+  <% end %>
+</table>

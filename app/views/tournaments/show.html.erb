@@ -1,1 +1,6 @@
 <%= @tournament.city %> — <%= @tournament.year %> — <%= @tournament.start_date %>
+<p>ЧГК</p>
+<% @tournament.chgk_editors.each do |editor| %>
+  <p><%= editor.first %> — <%= editor.last.join(", ") %></p>
+<!--  <p><%#= editor.name %> — <%#= editor.tour %></p>-->
+<% end %>
