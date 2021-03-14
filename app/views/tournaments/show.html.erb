@@ -1,6 +1,19 @@
-<%= @tournament.city %> — <%= @tournament.year %> — <%= @tournament.start_date %>
-<p>ЧГК</p>
+<%= @tournament.city %>: <%= @tournament.start_date %> — <%= @tournament.end_date %>
+<h3>Редакторы</h3>
+<h4>ЧГК</h4>
 <% @tournament.chgk_editors.each do |editor| %>
   <p><%= editor.first %> — <%= editor.last.join(", ") %></p>
-<!--  <p><%#= editor.name %> — <%#= editor.tour %></p>-->
+<% end %>
+
+<h4>Эрудит-квартет</h4>
+<% @tournament.eq_editors.each do |editor| %>
+  <p><%= editor.name %> — <%= editor.stage %></p>
+<% end %>
+<h4>Брейн-ринг</h4>
+<% @tournament.br_editors.each do |editor| %>
+  <p><%= editor.name %> — <%= editor.stage %></p>
+<% end %>
+<h4>Своя игра</h4>
+<% @tournament.si_editors.each do |editor| %>
+  <p><%= editor.name %> — <%= editor.stage %></p>
 <% end %>
