@@ -19,3 +19,4 @@ module KeChgkGg
 end
 
 require File.join(Rails.root, 'lib/tournament/tournament_year.rb')
+require File.join(Rails.root, 'lib/player.rb')
