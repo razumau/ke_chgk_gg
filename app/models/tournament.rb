@@ -20,6 +20,28 @@ class Tournament < ApplicationRecord
       reversed[joined] << tour
     end
 
-    reversed
+    reversed.sort_by(&:last)
+  end
+
+  def eq_editors
+    editors = EditorDetails.where(tournament_id: id, game: 'ЭК')
+                           .select(:name, :stage)
+
+  end
+
+  def br_editors
+    editors = EditorDetails.where(tournament_id: id, game: 'БР')
+                           .select(:name, :stage)
+  end
+
+  def si_editors
+    editors = EditorDetails.where(tournament_id: id, game: 'СИ')
+                           .select(:name, :stage)
+  end
+
+  private
+
+  def group_editors
+
   end
 end
