@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :teams, only: [:index, :show]
   resources :tournamentteams, only: [:index, :show], :controller => 'tournament_teams'
   resources :editors, only: [:index, :show]
+  resources :medals, only: :index
 end
