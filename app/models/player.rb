@@ -4,6 +4,7 @@ class Player < ApplicationRecord
   has_many :teamtournamentplayers, class_name: "TeamTournamentPlayer"
   has_many :tournamentteams, through: :teamtournamentplayers, class_name: "TournamentTeam"
   has_many :playerplaces, class_name: "PlayerPlace", foreign_key: "id"
+  has_one :medal, foreign_key: "id"
 
   def name
     "#{first_name} #{last_name}"
