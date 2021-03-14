@@ -13,9 +13,25 @@ class Player < ApplicationRecord
     "https://rating.chgk.info/player/#{rating_id}"
   end
 
-  def places
-    playerplaces.map do |pp|
-      TournamentYear.year(pp.tournament_id)
+  def results
+    places = fetch_places
+    tournamentteams.map do |team|
+      this_tournament_places = places[team.tournament_id]
+      PlayerResults.new(
+                        team: team,
+                        year: TournamentYear.year(team.tournament_id),
+                        chgk: this_tournament_places.chgk_place,
+                        eq: this_tournament_places.eq_place,
+                        br: this_tournament_places.br_place,
+                        si: this_tournament_places.si_place
+                        )
+    end
+  end
+
+  def fetch_places
+    playerplaces.each_with_object({}) do |pp, hash|
+      hash[pp.tournament_id] = pp
     end
   end
 end
+

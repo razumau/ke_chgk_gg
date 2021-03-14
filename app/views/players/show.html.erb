@@ -2,8 +2,23 @@
 
 <%= link_to "Рейтинг", @player.rating_link %>
 
-<% @player.tournamentteams.each do |team| %>
-  <p><%= link_to team.name, tournamentteam_path(team) %> (<%= team.tournament.year%>)</p>
-<% end %>
-
-<%= @player.places %>
+<table>
+  <tr>
+    <th>Год</th>
+    <th>Команда</th>
+    <th>ЧГК</th>
+    <th>Эрудит-квартет</th>
+    <th>Брейн-ринг</th>
+    <th>Своя игра</th>
+  </tr>
+  <% @player.results.each do |year| %>
+    <tr>
+      <td><%= year.year %></td>
+      <td><%= link_to year.team.name, tournamentteam_path(year.team) %></td>
+      <td><%= year.chgk %></td>
+      <td><%= year.eq %></td>
+      <td><%= year.br %></td>
+      <td><%= year.si %></td>
+    </tr>
+  <% end %>
+</table>
