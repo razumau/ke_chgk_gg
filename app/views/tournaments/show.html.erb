@@ -1,4 +1,26 @@
 <%= @tournament.city %>: <%= @tournament.start_date %> — <%= @tournament.end_date %>
+<table>
+  <tr>
+    <th>Команда</th>
+    <th>Сумма</th>
+    <th>I</th>
+    <th>II</th>
+    <th>III</th>
+    <th>IV</th>
+    <th>V</th>
+  </tr>
+  <% @tournament.chgk_results.each do |result| %>
+    <tr>
+      <td><%= result.name %></td>
+      <td><%= result.sum %></td>
+      <td><%= result.tour_1 %></td>
+      <td><%= result.tour_2 %></td>
+      <td><%= result.tour_3 %></td>
+      <td><%= result.tour_4 %></td>
+      <td><%= result.tour_5 %></td>
+    </tr>
+  <% end %>
+</table>
 <h3>Редакторы</h3>
 <h4>ЧГК</h4>
 <% @tournament.chgk_editors.each do |editor| %>
