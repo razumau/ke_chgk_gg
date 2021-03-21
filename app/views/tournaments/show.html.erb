@@ -21,11 +21,10 @@
     </tr>
   <% end %>
 </table>
+
 <h3>Редакторы</h3>
 <h4>ЧГК</h4>
-<% @tournament.chgk_editors.each do |editor| %>
-  <p><%= editor.first %> — <%= editor.last.join(", ") %></p>
-<% end %>
+<%= display_chgk_editors(@tournament.chgk_editors) %>
 
 <h4>Эрудит-квартет</h4>
 <% @tournament.eq_editors.each do |editor| %>
