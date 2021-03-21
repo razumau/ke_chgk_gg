@@ -26,3 +26,4 @@ group :development do
 end
 
 gem "tailwindcss-rails", "~> 0.3.3"
+gem "redis", "~> 4.0"
