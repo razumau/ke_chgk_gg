@@ -3,4 +3,3 @@ class Editor < ApplicationRecord
 
   has_many :editor_details, class_name: "EditorDetails"
 end
-
