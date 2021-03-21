@@ -18,14 +18,12 @@ class Player < ApplicationRecord
     places = fetch_places
     tournamentteams.map do |team|
       this_tournament_places = places[team.tournament_id]
-      PlayerResults.new(
-                        team: team,
+      PlayerResults.new(team: team,
                         year: TournamentYear.year(team.tournament_id),
                         chgk: this_tournament_places.chgk_place,
                         eq: this_tournament_places.eq_place,
                         br: this_tournament_places.br_place,
-                        si: this_tournament_places.si_place
-                        )
+                        si: this_tournament_places.si_place)
     end
   end
 
